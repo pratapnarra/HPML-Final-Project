@@ -11,9 +11,22 @@ Two targets specified
 2) llvm -mcpu=core-avx2 -  Intel core i5 with AVX2
 
 Results
-Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+|Model | Optimized by TVM | Unoptimized |
+|--- | --- | --- |
+|ResNet18 llvm | 104.03ms | 104.60ms|
+| ||
+|ResNet18 llvm-avx2 | 33.46ms | 33.29ms|
+| ||
+|ResNet50 llvm | 241.19ms | 240.45ms |
+| ||
+|ResNet50 llvm-avx2 | 88.26ms | 85.16ms |
+| ||
+|ResNet101 llvm | 446.21mss | 446.41ms |
+| ||
+|ResNet101 llvm-avx2 | 155.9ms | 156ms |
+
+
+The Json files has the TVM results, how it's optimizing
 
 Inorder to run the code create a new conda environment and install the apache TVM on it. 
 https://tvm.apache.org/docs/tutorial/install.html use this document to install TVM.
