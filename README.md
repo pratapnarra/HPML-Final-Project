@@ -25,6 +25,11 @@ Results
 | ||
 |ResNet101 llvm-avx2 | 155.9ms | 156ms |
 
+Observations
+1)Models compiled with AVX2 enabled perform much better than models compiled without it.
+2)Models optimized with TVM perform as good as unoptimized models. 
+
+
 
 The Json files has the TVM results, how it's optimizing
 
