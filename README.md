@@ -10,7 +10,7 @@ Two targets specified
 1) Llvm - For processor (intel core i5)
 2) llvm -mcpu=core-avx2 -  Intel core i5 with AVX2
 
-Results
+# Results Using Auto TVM
 |Model | Optimized by TVM | Unoptimized |
 |--- | --- | --- |
 |ResNet18 llvm | 104.03ms | 104.60ms|
@@ -24,6 +24,13 @@ Results
 |ResNet101 llvm | 446.21mss | 446.41ms |
 | ||
 |ResNet101 llvm-avx2 | 155.9ms | 156ms |
+
+# Results Using Auto Scheduler
+|Model | Optimized by TVM | Unoptimized |
+|--- | --- | --- |
+|ResNet18 llvm-avx2 | 28.65ms | 33.29ms|
+| ||
+|ResNet50 llvm-avx2 | 62.75ms | 85.16ms|
 
 Observations
 1)Models compiled with AVX2 enabled perform much better than models compiled without it.
@@ -41,7 +48,7 @@ https://tvm.apache.org/docs/tutorial/install.html use this document to install T
 $python autotune_resnet_multiple_models.py 
 ```
 
-First run autotune_resnet_multiple_models.py and it will generate the json files which contain the optimization schedules for TVM Autotune
+First run autotune_resnet_multiple_models.py to optimize the models using AutoTVM as scheduler and it will generate the json files which contain the optimization schedules 
 
 
 ```sh
@@ -50,4 +57,8 @@ $python compare_performance.py
 
 
 Then run the compare_performance.py and it will generate the time profiling results for optimized and unoptimized models
+
+The files autoschedule_resnet18_model.py, autoschedule_resnet50_model.py are used to optimize ResNet18 and ResNet50 models using TVM's Auto-Scheduler for scheduling and it will generate the output json files resnet-18-NHWC-B1-llvm.json and resnet-50-NHWC-B1-llvm.json. 
+
+Then run autoschedule_evaluate_resenet50.py and autoschedule_evaluate_resenet18.py files to generate the time profiling results for optimized models using Auto-Scheduler
 
