@@ -1,4 +1,4 @@
-# HPML-Final-Project
+# HPML-Final-Project -  Improving efficiency of inference computation
 Optimizing Inference of Convolutional Neural Networks Using Apache TVM
 
 Apache TVM is used to optimize the inference time of 3 ResNet models, namely ResNet18, ResNet50 and ResNet101.
