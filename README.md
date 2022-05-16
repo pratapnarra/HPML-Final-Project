@@ -36,11 +36,18 @@ The Json files has the TVM results, how it's optimizing
 Inorder to run the code create a new conda environment and install the apache TVM on it. 
 https://tvm.apache.org/docs/tutorial/install.html use this document to install TVM.
 
+
+```sh
 $python autotune_resnet_multiple_models.py 
+```
 
 First run autotune_resnet_multiple_models.py and it will generate the json files which contain the tvm results
 
+
+```sh
 $python compare_performance.py 
+```
+
 
 Then run the compare_performance.py will generate the time profiling results
 
