@@ -37,8 +37,10 @@ Inorder to run the code create a new conda environment and install the apache TV
 https://tvm.apache.org/docs/tutorial/install.html use this document to install TVM.
 
 $python autotune_resnet_multiple_models.py 
+
 First run autotune_resnet_multiple_models.py and it will generate the json files which contain the tvm results
 
 $python compare_performance.py 
+
 Then run the compare_performance.py will generate the time profiling results
 
