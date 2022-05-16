@@ -32,6 +32,9 @@ Two targets specified
 | ||
 |ResNet50 llvm-avx2 | 62.75ms | 85.16ms|
 
+![alt text](inference_results.jpeg)
+
+
 ## Observations
 1) Models compiled with AVX2 enabled perform much better than models compiled without it.
 2) Models optimized with TVM perform as good as unoptimized models. 
