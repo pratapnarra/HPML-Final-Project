@@ -43,6 +43,7 @@ Observations
 Inorder to run the code create a new conda environment and install the apache TVM on it. 
 https://tvm.apache.org/docs/tutorial/install.html use this document to install TVM.
 
+##Using AutoTVM for scheduling
 
 ```sh
 $python autotune_resnet_multiple_models.py 
@@ -58,6 +59,7 @@ $python compare_performance.py
 
 Then run the compare_performance.py and it will generate the time profiling results for optimized and unoptimized models
 
+##Using Auto-scheduler for scheduling
 The files autoschedule_resnet18_model.py, autoschedule_resnet50_model.py are used to optimize ResNet18 and ResNet50 models using TVM's Auto-Scheduler for scheduling and it will generate the output json files resnet-18-NHWC-B1-llvm.json and resnet-50-NHWC-B1-llvm.json. 
 
 Then run autoschedule_evaluate_resenet50.py and autoschedule_evaluate_resenet18.py files to generate the time profiling results for optimized models using Auto-Scheduler
